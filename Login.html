@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animated Login Form</title>
+	<link rel="stylesheet" type="text/css" href="LoginCSS.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+	
+.products{
+    width: 50%;
+    align-self: center;
+	align-items: center;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.product{
+    position: relative;
+    background-color: var(--sectionBack);
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    transition: .3s;
+	align-items: center;
+}
+.product:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 5px 10px rgba(55, 212, 240, 0.501);
+}
+.image{
+    width:70%;
+    height: 60%;
+    display: grid;
+    place-content: center;
+}
+.image img{
+    width: 100px;
+}
+
+.bay{
+    position: absolute;
+    top: 1px;
+    right: 20px;
+	
+}
+.bay button{
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: none;
+    background-color: var(--textColor);
+    color: var(--sectionBack);
+    font-size: 18px;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: .5s;
+	
+}
+.bay button:hover{
+    transform: scale(1.1);
+	
+}
+.wrapper
+{
+	display: grid;
+	grid-template-rows: 100px 100px 100px;
+	padding-bottom:10%;
+	grid-gap:60px ;
+}
+</style>
+<body>
+ 
+	<img class="wave" src="iMAGES/wave22.jpg" width="100%">
+ 
+  <div class="container">
+	
+		<div class="img">
+      <img src="images//pngtree1.png">
+		</div>
+    
+		<div class="login-content">
+			<div class="wrapper">
+				<div class="products">
+                     
+					<div class="product" style="margin-top:200%;">
+						<a href="AdminLogin.html" <button> ADMIN </button></a>
+						<div class="bay">
+						
+						</div>
+						<div class="image">
+							<img src="images/preview.jpg" alt="">
+						</div>
+					  </div>
+				</div>
+					
+				</div>
+			<form action="index.html">
+			
+        <img src="images/Creative-Hospital-Store-Logo.jpg">
+				<h2 class="title">Welcome</h2>
+           		<div class="input-div user">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Client Username</h5>
+           		   		<input type="text" class="input">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input">
+            	   </div>
+            	</div>
+            	<a href="#">Forgot Password?</a>
+            	<input type="submit" class="btn" value="Login">
+          
+          <a href="sign.html">
+              <input  type="button" class="btn" value="Sign Up">
+          </a> 
+		</form>
+        </div>
+    </div>
+
+</body>
+<script>
+  const inputs = document.querySelectorAll(".input");
+
+
+function addcl(){
+ let parent = this.parentNode.parentNode;
+ parent.classList.add("focus");
+}
+
+function remcl(){
+ let parent = this.parentNode.parentNode;
+ if(this.value == ""){
+  parent.classList.remove("focus");
+ }
+}
+
+
+inputs.forEach(input => {
+ input.addEventListener("focus", addcl);
+ input.addEventListener("blur", remcl);
+});
+</script>
+</html>

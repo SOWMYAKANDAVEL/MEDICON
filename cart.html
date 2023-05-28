@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Pharma &mdash; Colorlib Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700|Roboto:400,700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</head>
+<style>
+  [class*="entypo-"]:before { font-family: 'entypo', sans-serif; }
+  main {
+    background-color: #ecf0f1;
+    font: 300 1.25em/1.4 "Lato", sans-serif;
+    color: #686868;
+  }
+  h1, h2, h3, h4, h5, h6 { font-weight: 400; }
+  h1, .sub-heading {
+    text-align: center;
+    margin: .5rem 0 1rem;
+  }
+  .sub-heading {
+    font-size: .75em;
+    font-weight: 300;
+  }
+  
+  /**
+   * @section: utilities;
+   * @see: Justify Grid [http://justifygrid.com/]
+   */
+  ._grid {
+    text-align: justify !important;
+    text-justify: distribute-all-lines;
+    font-size: 0 !important;
+    text-rendering: optimizespeed;
+  }
+  ._grid:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+  ._column {
+    display: inline-block;
+    vertical-align: top;
+    font-size: medium;
+    text-align: left;
+    text-rendering: optimizeLegibility;
+  }
+  ._btn {
+    display: inline-block;
+    background-color: #bdc3c7;
+    border: none;
+    padding: .5em .75em;
+    text-align: center;
+    font-weight: 300;
+  }
+  ._btn:hover,
+  .cart-totals:hover ._btn {
+    background-color: #3498db;
+    color: #ecf0f1;
+  }
+  
+  /**
+   * @section: shopping-cart;
+   */
+  .shopping-cart {
+    width: 100%;
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+  /**
+   * @extends: _grid;
+   */
+  .shopping-cart--list-item {
+    border: 0.5px solid #bdc3c7;
+    margin-bottom: 1rem;
+    height: 10rem;
+    overflow: hidden;
+    transform: translateX(110deg);
+  }
+  .shopping-cart--list-item:hover,
+  .shopping-cart--list-item:hover * {
+    border-color: #afafaf;
+    transform: translateX(110deg);
+  }
+  .shopping-cart--list-item > ._column {
+      height: 100%; /* make vertical lines match */
+  }
+  
+  /**
+   * @section: product-image;
+   * @extends: _column;
+   */
+  .product-image {
+    width: 16.663198%;
+    background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7") no-repeat center / cover transparent;
+  }
+  
+  /**
+   * @section: product-info;
+   * @extends: _column;
+   */
+  .product-info {
+    width: 70.832119%;
+    padding: .5rem;
+  }
+  .product-name {
+    font: 300 2.4em/1 ;
+    letter-spacing: -.025em;
+    margin: 0 0 .125em;
+  }
+  .price {
+    line-height: 1;
+    text-align: right;
+  }
+  .product-single-price {
+    margin-top: -1rem;
+    font-size: 2.4em;
+  }
+  
+  /**
+   * @section: product-modifiers;
+   * @extends: _column;
+   */
+  .product-modifiers {
+    width: 12.496358%;
+    text-align: right;
+    border-left: 1px solid #bdc3c7;
+  }
+  .product-subtract,
+  .product-plus,
+  .product-qty {
+    width: 33.330557%;
+    background-color: transparent;
+    color: #686868;
+    text-align: center;
+  }
+  .product-qty {
+    padding: .35em .75em;
+  }
+  .product-remove {
+    font-size: .875em;
+    margin-top: 3.35rem;
+    background-color: #e74c3c;
+    color: #ecf0f1;
+    width: 100%;
+    visibility: hidden;
+  }
+  .product-modifiers:hover .product-remove {
+    visibility: visible;
+  }
+  .product-remove:before {
+    margin-right: .5em;
+  }
+  .product-remove:hover {
+    background-color: #c0392b;
+  }
+  .product-total-price {
+    border-top: 1px solid #bdc3c7;
+    color: #95a5a6;
+    font-size: 1.25em;
+    padding: .5rem;
+  }
+  .shopping-cart--list-item:hover .product-total-price {
+    background-color: #3498db;
+    color: #ecf0f1;
+   
+  }
+  
+  /**
+   * @section: cart-totals;
+   * @extends: _grid;
+   */
+  .cart-totals {
+    border-top: 1px solid #bdc3c7;
+    margin-bottom: 3rem;
+  }
+  .cart-totals ._column {
+    width: 19.984013%;
+    padding: .5rem;
+    line-height: 1.2;
+  }
+  .cart-totals ._column:not(:last-of-type) {
+    border-right: 1px solid #bdc3c7;
+  }
+  .cart-totals ._column:first-of-type {
+    padding-left: 0;
+  }
+  .cart-totals-key {
+    font-size: 1.125em;
+    color: #bdc3c7;
+  }
+  .cart-totals ._column:hover .cart-totals-value,
+  .cart-totals ._column:hover .cart-totals-key {
+    color: #333;
+  }
+  .cart-totals-value {
+    font-size: 2em;
+  }
+  ._column.checkout {
+    text-align: right;
+    padding: 0;
+    margin-top: 1.5em;
+    vertical-align: middle;
+  }
+  .checkout-btn:before {
+    margin-right: .5em;
+  }
+  ._btn.checkout-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  /**
+   * Animations
+   */
+  .product-remove,
+  .cart-totals * {
+    transition: all .2s ease;
+  }
+  .closing {
+    transition: all .5s ease;
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+  }
+  </style>
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <div class="top_contact-container">
+          <button type="button" onclick="history.back()"  class="btn btn-dark" style="margin-left: -90px;">Back</button>
+          <div class="tel_container">
+            <a href="">
+              <img src="images/telephone-symbol-button.png" alt=""> Call : +01 1234567890
+            </a>
+          </div>
+          <div class="social-container">
+            <a href="">
+              <img src="images/fb.png" alt="" class="s-1">
+            </a>
+            <a href="">
+              <img src="images/twitter.png" alt="" class="s-2">
+            </a>
+            <a href="">
+              <img src="images/instagram.png" alt="" class="s-3">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="">
+            <span>
+              Medicon
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 40px;">
+            <div class="d-flex  flex-column flex-lg-row align-items-center w-100 justify-content-between">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html"> About </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="medicine.html"> Medicine </a>
+                </li>
+            
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="cart.html">Cart</a>
+                </li>
+              </ul>
+          
+              <div class="login_btn-contanier ml-0 ml-lg-5">
+                <a href="index.html">
+                  <img src="images/user.png" alt="" style="margin-left: 70px;">
+                  <span>
+                    SOWMYA
+                  </span>
+                </a>
+              </div>
+              <a href="Login.html"><button type="button"  class="btn btn-danger" style="margin-left: -100px;">Logout</button></a>
+            </div>
+          </div>
+
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+<br><br>
+<div class="main">
+
+
+  <section class="shopping-cart">
+    <ol class="ui-list shopping-cart--list" id="shopping-cart--list">
+
+      <script id="shopping-cart--list-item-template" type="text/template">
+        <li class="_grid shopping-cart--list-item">
+          <div class="_column product-image">
+            <img class="product-image--img" src="{{=img}}" alt="Item image" />
+          </div>
+          <div class="_column product-info">
+            <h4 class="product-name">{{=name}}</h4>
+            <p class="product-desc">{{=desc}}</p>
+            <div class="price product-single-price">Rs: {{=price}}</div>
+          </div>
+          <div class="_column product-modifiers" data-product-price="{{=price}}">
+            <div class="_grid">
+              <button class="_btn _column product-subtract">&minus;</button>
+              <div class="_column product-qty">0</div>
+              <button class="_btn _column product-plus">&plus;</button>
+            </div>
+            <button class="_btn entypo-trash product-remove">Remove</button>
+            <div class="price product-total-price">Rs: 0.00</div>
+          </div>
+        </li>
+      </script>
+
+    </ol>
+
+    <footer class="_grid cart-totals">
+      <div class="_column subtotal" id="subtotalCtr">
+        <div class="cart-totals-key">Subtotal</div>
+        <div class="cart-totals-value">Rs: 0.00</div>
+      </div>
+      <div class="_column shipping" id="shippingCtr">
+        <div class="cart-totals-key">Shipping</div>
+        <div class="cart-totals-value">Rs: 0.00</div>
+      </div>
+      <div class="_column taxes" id="taxesCtr">
+        <div class="cart-totals-key">Taxes (6%)</div>
+        <div class="cart-totals-value">Rs: 0.00</div>
+      </div>
+      <div class="_column total" id="totalCtr">
+        <div class="cart-totals-key">Total</div>
+        <div class="cart-totals-value">Rs: 0.00</div>
+      </div>
+      <div class="_column checkout">
+        <a href="contact.html" class="btn btn-primary btn-me px-4 gap-3">Checkout</a>
+      </div>
+    </footer>
+
+  </section>
+</div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+  <script src='//cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js'></script>
+      <script id="rendered-js" >
+/* jslint browser: true*/
+/*global $*/
+
+// https://github.com/jasonmoo/t.js
+(function () {function c(a) {this.t = a;}function l(a, b) {for (var e = b.split("."); e.length;) {if (window.CP.shouldStopExecution(0)) break;if (!(e[0] in a)) return !1;a = a[e.shift()];}window.CP.exitedLoop(0);return a;}function d(a, b) {return a.replace(h, function (e, a, i, f, c, h, k, m) {var f = l(b, f),j = "",g;if (!f) return "!" == i ? d(c, b) : k ? d(m, b) : "";if (!i) return d(h, b);if ("@" == i) {e = b._key;a = b._val;for (g in f) f.hasOwnProperty(g) && (b._key = g, b._val = f[g], j += d(c, b));b._key = e;b._val = a;return j;}}).replace(k, function (a, c, d) {return (a = l(b, d)) || 0 === a ? "%" == c ? new Option(a).innerHTML.replace(/"/g, "&quot;") :
+      a : "";});}var h = /\{\{(([@!]?)(.+?))\}\}(([\s\S]+?)(\{\{:\1\}\}([\s\S]+?))?)\{\{\/\1\}\}/g,k = /\{\{([=%])(.+?)\}\}/g;c.prototype.render = function (a) {return d(this.t, a);};window.t = c;})();
+// end of 't';
+
+Number.prototype.to_$ = function () {
+  return "Rs: " + parseFloat(this).toFixed(2);
+};
+String.prototype.strip$ = function () {
+  return this.split("Rs: ")[1];
+};
+
+var app = {
+
+  shipping: 5.00,
+  products: [
+  {
+    "name": "<b>Bioderma</b>",
+    "price": "20",
+    "img": "images/product_01.png",
+    "desc": "Bioderma Sensibio H2O cleans out impurities and maintains the skin's natural pH balance. It's an easy and extremely gentle way to cleanse the skin and including the most delicate, sensitive skin" },
+
+  {
+    "name": "<b>Cetyl Pure</b>",
+    "price": "120",
+    "img": "images/product_04.png",
+    "desc": "Tablet reduces the risk of future strokes. It helps lower your blood pressure and make it easier for your heart to pump blood around your body." },
+
+  {
+    "name": "<b>Poo-Pourri</b>",
+    "price": "240",
+    "img": "images/product_06.png",
+    "desc": "It uses a proprietary blend of essential oils and other natural compounds, which work by forming a protective film on the surface of the toilet bowl water." },
+],
+
+
+
+  removeProduct: function () {
+    "use strict";
+
+    var item = $(this).closest(".shopping-cart--list-item");
+
+    item.addClass("closing");
+    window.setTimeout(function () {
+      item.remove();
+      app.updateTotals();
+    }, 500); // Timeout for css animation
+  },
+
+  addProduct: function () {
+    "use strict";
+
+    var qtyCtr = $(this).prev(".product-qty"),
+    quantity = parseInt(qtyCtr.html(), 10) + 1;
+
+    app.updateProductSubtotal(this, quantity);
+  },
+
+  subtractProduct: function () {
+    "use strict";
+
+    var qtyCtr = $(this).next(".product-qty"),
+    num = parseInt(qtyCtr.html(), 10) - 1,
+    quantity = num <= 0 ? 0 : num;
+
+    app.updateProductSubtotal(this, quantity);
+  },
+
+  updateProductSubtotal: function (context, quantity) {
+    "use strict";
+
+    var ctr = $(context).closest(".product-modifiers"),
+    productQtyCtr = ctr.find(".product-qty"),
+    productPrice = parseFloat(ctr.data("product-price")),
+    subtotalCtr = ctr.find(".product-total-price"),
+    subtotalPrice = quantity * productPrice;
+
+    productQtyCtr.html(quantity);
+    subtotalCtr.html(subtotalPrice.to_$());
+
+    app.updateTotals();
+  },
+
+  updateTotals: function () {
+    "use strict";
+
+    var products = $(".shopping-cart--list-item"),
+    subtotal = 0,
+    shipping;
+
+    for (var i = 0; i < products.length; i += 1) {if (window.CP.shouldStopExecution(1)) break;
+      subtotal += parseFloat($(products[i]).find(".product-total-price").html().strip$());
+    }window.CP.exitedLoop(1);
+
+    shipping = subtotal > 0 && subtotal < 100 / 1.06 ? app.shipping : 0;
+
+    $("#subtotalCtr").find(".cart-totals-value").html(subtotal.to_$());
+    $("#taxesCtr").find(".cart-totals-value").html((subtotal * 0.06).to_$());
+    $("#totalCtr").find(".cart-totals-value").html((subtotal * 1.06 + shipping).to_$());
+    $("#shippingCtr").find(".cart-totals-value").html(shipping.to_$());
+  },
+
+  attachEvents: function () {
+    "use strict";
+
+    $(".product-remove").on("click", app.removeProduct);
+    $(".product-plus").on("click", app.addProduct);
+    $(".product-subtract").on("click", app.subtractProduct);
+  },
+
+  setProductImages: function () {
+    "use strict";
+
+    var images = $(".product-image"),
+    ctr,
+    img;
+
+    for (var i = 0; i < images.length; i += 1) {if (window.CP.shouldStopExecution(2)) break;
+      ctr = $(images[i]),
+      img = ctr.find(".product-image--img");
+
+      ctr.css("background-image", "url(" + img.attr("src") + ")");
+      img.remove();
+    }window.CP.exitedLoop(2);
+  },
+
+  renderTemplates: function () {
+    "use strict";
+
+    var products = app.products,
+    content = [],
+    template = new t($("#shopping-cart--list-item-template").html());
+
+    for (var i = 0; i < products.length; i += 1) {if (window.CP.shouldStopExecution(3)) break;
+      content[i] = template.render(products[i]);
+    }window.CP.exitedLoop(3);
+
+    $("#shopping-cart--list").html(content.join(""));
+  } };
+
+
+
+app.renderTemplates();
+app.setProductImages();
+app.attachEvents();
+    </script>
+    </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h4>
+              Contact
+            </h4>
+            <div class="box">
+              <div class="img-box">
+                <img src="images/telephone-symbol-button.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  +01 123567894
+                </h6>
+              </div>
+            </div>
+            <div class="box">
+              <div class="img-box">
+                <img src="images/email.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  demo@gmail
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_menu">
+            <h4>
+              Menu
+            </h4>
+            <ul class="navbar-nav  ">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"> About </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="buy.html"> Online Buy </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html"> Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cart.html"> Cart </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="info_news">
+            <h4>
+              newsletter
+            </h4>
+            <form action="">
+              <input type="text" placeholder="Enter Your email">
+              <div class="d-flex justify-content-center justify-content-md-end mt-3">
+                <button>
+                  Subscribe
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+</body>
+
+</html>
